@@ -1,4 +1,5 @@
 public class Contact {
+
     String name;
     String number;
 
@@ -7,5 +8,29 @@ public class Contact {
         this.number = number;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public static Contact lineToContact(String line) {
+        String[] parts = line.split(" \\$ ");
+        return new Contact(parts[0], parts[1]);
+    }
+
+    public static String contactToLine(Contact contact) {
+        return contact.getName() + " $ " + contact.getNumber();
+    }
 }
