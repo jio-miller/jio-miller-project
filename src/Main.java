@@ -4,8 +4,12 @@ public class Main {
     private static ArrayList<Contact> contacts = new ArrayList<Contact>();
 
     public static void main(String[] args) {
-
+        addContact("Matthew", "2813231986");
+        addContact("dadalt", "1234567890");
+        getContacts();
     }
+
+
 
     public static void addContact(String name, String number) {
         contacts.add(new Contact(name, number));
@@ -28,6 +32,8 @@ public class Main {
     }
 
     public static void getContacts(){
-
+        for (Contact contact: contacts) {
+            System.out.println(contact.name+" | "+contact.number);
+        }
     }
 }
